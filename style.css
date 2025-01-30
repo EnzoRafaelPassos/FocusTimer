@@ -1,0 +1,167 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+    --controls: hsl(0, 0%, 100%);
+    --mode-tree: hsl(97, 100%, 17%);
+    --mode-rain: hsl(60, 1%, 85%);
+    --mode-coffe: hsl(21, 61%, 24%);
+    --mode-fire: hsl(12, 91%, 50%);
+    --mode-default: hsl(0, 3%, 7%);
+    --text-dark: hsl(0, 1%, 18%);
+    --text-light: hsl(0, 0%, 97%);
+    --bgCard: #E1E1E6;
+    --iconCard: #323238;
+}
+
+html {
+    background-color: var(--mode-default);
+    color: var(--text-light);
+    transition: background ease-in-out 0.5s;
+}
+
+
+html.tree {
+    --mode-default: var(--mode-tree);
+    background: var(--mode-default);
+}
+
+html.rain {
+    --mode-default: var(--mode-rain);
+    background: var(--mode-default);
+    --text-light: var(--text-dark);
+    color: var(--text-light);
+    --controls: var(--text-light);
+}
+
+html.coffe {
+    --mode-default: var(--mode-coffe);
+    background: var(--mode-default);
+    --controls: var(--text-light);
+}
+
+html.fire {
+    --mode-default: var(--mode-fire);
+    background: var(--mode-fire);
+    --controls: var(--text-light);
+}
+
+.ph-play-circle,
+.ph-stop-circle,
+.ph-plus-circle,
+.ph-minus-circle {
+    color: var(--controls);
+}
+
+body {
+    display: grid;
+    height: 100vh;
+    place-content: center;
+    justify-items: center;
+    align-content: center;
+}
+
+#app {
+    font-family: "Roboto", serif;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: calc(2vw + 10.0rem);
+
+}
+
+label {
+    cursor: pointer;
+}
+
+#timer {
+    display: flex;
+    font-size: clamp(8.0rem, 12.6rem, 14.0rem);
+
+}
+
+#controls {
+    font-size: 4.8rem;
+    display: flex;
+    justify-content: center;
+    gap: 4.0rem;
+}
+
+button {
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    font-size: 4.8rem;
+}
+
+#cards {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: 150px 150px;
+    gap: 3.2rem;
+    position: relative;
+    align-items: center;
+}
+
+.card input {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    visibility: hidden;
+
+}
+
+.card label {
+    font-size: 5.6rem;
+    background-color: var(--bgCard);
+    color: var(--iconCard);
+    padding: 4.5rem;
+    border: 0;
+    border-radius: 8px;
+    transition: ease-in-out 0.5s;
+}
+
+.card input:checked+label {
+    background-color: #02799D;
+    color: #ffffff;
+}
+
+
+.running .ph-play-circle,
+html:not(.running) .ph-stop-circle {
+    display: none;
+
+}
+
+
+@media screen and (max-width: 768px) {
+    body {
+        height: auto;
+    }
+
+    #app {
+        display: flex;
+        flex-direction: column;
+        padding: 1.0rem;
+        gap: 10.0rem;
+
+    }
+
+    #cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 150px 150px;
+
+
+    }
+
+    .card label {
+        font-size: 3.6rem;
+    }
+
+}

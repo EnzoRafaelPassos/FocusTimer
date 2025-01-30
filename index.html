@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script type="module" defer src="main.js"></script>
+    <title>FocusTimer - 2.0</title>
+</head>
+
+<body>
+    <div id="app">
+        <div id="timer-wrapper">
+            <div id="timer">
+                <span id="minutes">00</span>
+                <span>:</span>
+                <span id="seconds">00</span>
+            </div>
+
+            <section id="controls">
+                <button data-action = "toggleRunning" class="ph ph-play-circle"></button>
+                <button data-action = "toggleRunning" class="ph ph-stop-circle"></button>
+                <button data-action = "setUp" class="ph ph-plus-circle"></button>
+                <button data-action = "setLow" class="ph ph-minus-circle"></button>
+            </section>
+        </div>
+
+        <div id="cards">
+            <div class="card">
+                <input type="radio" name="radio" id="tree-mode" />
+                <label for="tree-mode"><i class="ph ph-tree"></i></label>
+            </div>
+            <div class="card">
+                <input type="radio" name="radio" id="rain-mode" />
+                <label for="rain-mode"><i class="ph ph-cloud"></i></label>
+            </div>
+            <div class="card">
+                <input type="radio" name="radio" id="coffe-mode" />
+                <label for="coffe-mode"><i class="ph ph-storefront"></i></label>
+            </div>
+            <div class="card">
+                <input type="radio" name="radio" id="fire-mode" />
+                <label for="fire-mode"><i class="ph ph-fire"></i></label>
+            </div>
+
+        </div>
+
+
+
+    </div>
+</body>
+
+</html>
